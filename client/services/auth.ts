@@ -2,7 +2,7 @@ import { User } from "../models/type";
 import AxiosConfig from "./config";
 
 class AuthRequest {
-  signupUser({ user }: { user: User }){
+  signupUser( {user} : { user: User }){
     const url = "/signup";
     return AxiosConfig.post(url, user)
   }

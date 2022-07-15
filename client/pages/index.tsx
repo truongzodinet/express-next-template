@@ -5,12 +5,8 @@ import Link from "next/link";
 import styles from "../styles/Home.module.scss";
 const listRouter = [
   {
-    href: "/blogs",
-    title: "Blogs Page",
-  },
-  {
-    href: "/photos",
-    title: "Photos Page",
+    href: "/users",
+    title: "List Users",
   },
 ];
 const Home: NextPage = () => {

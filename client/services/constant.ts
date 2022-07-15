@@ -1,1 +1,1 @@
-export const baseUrl: string =  process.env.baseURL || "https://jsonplaceholder.typicode.com";
+export const baseUrl: string =  process.env.baseURL || "http://localhost:3000";
