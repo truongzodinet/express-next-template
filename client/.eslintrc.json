@@ -1,0 +1,70 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb",
+        "prettier",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended",
+        "plugin:sonarjs/recommended",
+        "plugin:security/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["@typescript-eslint"],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                "components": ["Link"],
+                "specialLink": ["hrefLeft", "hrefRight"],
+                "aspects": ["invalidHref", "preferButton"]
+            }
+        ],
+        "no-nested-ternary": "off",
+        "import/prefer-default-export": "off"
+    },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "parserOptions": {
+                "project": "./tsconfig.json"
+            },
+            "rules": {
+                "@typescript-eslint/prefer-nullish-coalescing": "error"
+            }
+        },
+        {
+            "files": ["bin/*.js", "lib/*.js"],
+            "excludedFiles": "*.test.js",
+            "rules": {
+                "quotes": ["warn", "single"]
+            }
+        }
+    ]
+}
